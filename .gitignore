@@ -1,0 +1,8 @@
+*.bak
+src/output_files/
+src/simulation/
+src/db/
+src/incremental_db/
+tests/a.out
+src/db
+src/incremental_db
