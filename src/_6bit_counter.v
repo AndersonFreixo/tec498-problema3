@@ -1,4 +1,4 @@
-module _6bit_counter
+module _6bit_counter(
     input  clk,   // Clock principal de entrada
     input  rst,      // Reset síncrono (ou assíncrono)
     output reg [5:0] counter,

@@ -23,9 +23,9 @@ div2_freq df (
 );
 
 //clock da iteracao
-div4_freq df2 (
+div2_freq df2 (
 	.clk(clk25mhz),
-	.clk_div2(enabled_clk)
+	.clk_div2(clk12_5mhz)
 );
 //contador que itera os enderecos
 //usa clock mais lento p garantir que a
