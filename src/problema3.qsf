@@ -51,6 +51,10 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE VGA_driver.v
+set_global_assignment -name VERILOG_FILE VGA_interface.v
 set_global_assignment -name VERILOG_FILE _4bit_reg.v
 set_global_assignment -name VERILOG_FILE _6bit_counter.v
 set_global_assignment -name VERILOG_FILE d_ff.v
@@ -59,6 +63,4 @@ set_global_assignment -name VERILOG_FILE mux_64i4w.v
 set_global_assignment -name VERILOG_FILE demux_64i4w.v
 set_global_assignment -name VERILOG_FILE demux64i1w.v
 set_global_assignment -name VERILOG_FILE div2_freq.v
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VERILOG_FILE main.v
