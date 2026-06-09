@@ -1,7 +1,7 @@
 module div2_freq (
     input  clk,   // Clock principal de entrada
     input  rst,      // Reset síncrono (ou assíncrono)
-    output clk_div2, // Frequência dividida por 2
+    output clk_div2 // Frequência dividida por 2
 );    
     reg q;
 	 
@@ -10,7 +10,7 @@ module div2_freq (
         else q <= q;         
     end
 
-    assign clk_div2 = q1;
+    assign clk_div2 = q;
 
 endmodule
     

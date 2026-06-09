@@ -58,7 +58,7 @@ set_global_assignment -name VERILOG_FILE mem_blk.v
 set_global_assignment -name VERILOG_FILE mux_64i4w.v
 set_global_assignment -name VERILOG_FILE demux_64i4w.v
 set_global_assignment -name VERILOG_FILE demux64i1w.v
-set_global_assignment -name VERILOG_FILE init_screen.v
 set_global_assignment -name VERILOG_FILE div2_freq.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE main.v

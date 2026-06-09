@@ -7,8 +7,8 @@ module _6bit_counter
 	 
     always @(posedge clk or posedge rst) begin
         if (rst) counter <= 6'b000000;
-        else if (counter == 6'b111111) counter = 6'b000000;
-		  else counter += 1;	
+        else if (counter == 6'b111111) counter <= 6'b000000;
+		  else counter <= counter + 1;	
 	 end
 	 assign done = (counter == 6'b111111);
 	 
