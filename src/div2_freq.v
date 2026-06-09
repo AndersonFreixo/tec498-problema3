@@ -7,7 +7,7 @@ module div2_freq (
 	 
     always @(posedge clk or posedge rst) begin
         if (rst) q <= 1'b0;
-        else q <= q;         
+        else q <= !q;         
     end
 
     assign clk_div2 = q;
