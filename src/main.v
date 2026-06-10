@@ -8,43 +8,29 @@ module main (
 	);
 	
 	wire [5:0] address;
-	wire write;	
-	wire clk25mhz, clk12_5mhz;
-	wire done, not_done, enabled_clk;
-	not (not_done, done);
-	//congela o contador se done = 1, ou seja 
-	//se contador atingiu endereco 111111
-	and (enabled_clk, clk12_5mhz, not_done);
+	wire clk25mhz;
+   wire nrst;
+	not (nrst, reset);
 	
 //clock da vga
 div2_freq df (
 	.clk(clk),
-	.clk_div2(clk25mhz)
+	.rst(nrst),
+	.q(clk25mhz)
 );
-
-//clock da iteracao
-div2_freq df2 (
-	.clk(clk25mhz),
-	.clk_div2(clk12_5mhz)
-);
-//contador que itera os enderecos
-//usa clock mais lento p garantir que a
-//interface vga identifique os pulsos
-//do write_enable
 
 _6bit_counter c6 (
-	.clk(clk12_5mhz),
-	.rst(reset),
-	.counter(address),
-	.done(done)
+	.clk(clk25mhz),
+	.rst(nrst),
+	.counter(address)
 );		
 		
 VGA_interface 
 	u(
 		//INPUT
 		.clk_25mhz(clk25mhz), 
-		.reset(reset), 
-		.write_enable(enabled_clk),
+		.reset(nrst), 
+		.write_enable(clk25mhz),
 		.data(2'b01),
 		.address(address),
 	
